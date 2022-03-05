@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+  terraria-tmodloader:
+    restart: always
+    build: .
+    ports:
+      - "7778:7777"
+    volumes:
+      - "${DATA}:/terraria"

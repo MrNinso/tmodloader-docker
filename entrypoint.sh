@@ -30,7 +30,7 @@ else
   fi
 
   mkfifo $pipe
-  tmux new-session -d "$server -config config.txt | tee $pipe $players" &
+  tmux new-session -d "$server -config /terraria/config.txt | tee $pipe $players" &
   sleep 60 && /usr/sbin/crond -d 8 &
   cat $pipe &
 
