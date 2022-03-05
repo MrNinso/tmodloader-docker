@@ -4,7 +4,7 @@ FROM mono:6.12.0.122
 
 ARG TMOD_VERSION=0.11.8.6
 
-WORKDIR terraria-server
+WORKDIR /terraria-server
 
 COPY --from=build /usr/local/bin/inject /usr/local/bin/inject
 COPY --from=build /terraria-server /terraria-server
@@ -14,7 +14,7 @@ RUN curl -SL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD
     rm -r lib tModLoader.bin.x86 tModLoaderServer.bin.x86 &&\
     chmod u+x tModLoaderServer &&\
     apt-get update &&\
-    apt-get install procps tmux -y &&\
+    apt-get install procps tmux cron -y &&\
     ln -s ${HOME}/.local/share/Terraria/ /terraria &&\
     mkdir sys &&\
     mv System*.dll* sys &&\
