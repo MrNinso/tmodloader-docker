@@ -2,7 +2,7 @@ FROM rfvgyhn/tmodloader:v0.11.7.8 as build
 
 FROM mono:6.12.0.122
 
-ARG TMOD_VERSION=0.11.8.6
+ARG TMOD_VERSION=0.11.8.7
 
 WORKDIR /terraria-server
 
