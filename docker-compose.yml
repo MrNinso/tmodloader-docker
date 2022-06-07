@@ -4,7 +4,7 @@ services:
   terraria-tmodloader:
     restart: always
     build: .
-    image: tmod:mono-11.8.7
+    image: tmod:mono-11.8.9
     ports:
       - "7778:7777"
     volumes:
